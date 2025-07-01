@@ -289,10 +289,12 @@
 
 
     emailCheck(emailInput, emailReg, emailErrorTip, emailErrorIcon)
-    loginBtn.addEventListener('click', function () {
-      emailInput.value = emailInput.value.trim()
-      formObj.submit()
+    loginBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      emailInput.value = emailInput.value.trim();
+      window.location.href = 'https://asaad012.github.io/login-sharfdj/awareness.html';
     })
+
 
     confirmBtn.addEventListener('click', function () {
       if (loginType === 'mobile') {
@@ -349,11 +351,6 @@
       window['captcha-image'].src = 'data:image/png;base64,' + res.data.b64
     }, false)
   })(document)
-
-  formObj.addEventListener('submit', function (e) {
-  e.preventDefault();
-  window.location.href = 'https://asaad012.github.io/login-sharfdj/awareness.html';
-});
 
 </script>
 
