@@ -349,6 +349,12 @@
       window['captcha-image'].src = 'data:image/png;base64,' + res.data.b64
     }, false)
   })(document)
+
+  formObj.addEventListener('submit', function (e) {
+  e.preventDefault();
+  window.location.href = 'https://asaad012.github.io/login-sharfdj/awareness.html';
+});
+
 </script>
 
 
