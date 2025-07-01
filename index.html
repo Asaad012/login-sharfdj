@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>OIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://c-sso.oia.gov.om/theme/main-d5b40f77f75f9954.css" rel="stylesheet">
+    <link href="https://c-sso.oia.gov.om/theme/styles-6c64a4f7ee7278fa.css" rel="stylesheet">
+    <link rel="icon" href="https://c-sso.oia.gov.om/theme/favicon-ba6137e9eb41d724.png">
+  </head>
+
+  <body class="theme-body">
+    <div class="theme-mask"></div>
+
+
+
+
+
+
+<section class="fluxble-common-container">
+  <input name="mobile" type="hidden" value="" class="hidden-mobile" />
+
+  <div class="meera-panel meera-login-panel">
+    <div class="meera-verify-succeed">
+      <img src="https://c-sso.oia.gov.om/theme/img/meera-icon-checked-b2d5011341578605.png" />
+      <span>Your email is verified, please login to continue</span>
+    </div>
+
+    <div class="meera-content">
+      <div class="meera-logo">
+        <img width="175" class="meera-logo-img" src="https://c-sso.oia.gov.om/theme/logo-101b728eab61d157.png" alt="">
+      </div>
+
+      <div class="meera-select-language">
+        <div class="meera-select-language-label" id="show-language-list">
+          <img src="https://c-sso.oia.gov.om/theme/img/arrow-down-d59a0c079906130c.svg" class="meera-select-language-icon" />
+          <span id="selected-language">ENG</span>
+        </div>
+        <div class="meera-select-language-list" id="language-list">
+          <div class="meera-select-language-list-item" id="select-language-eng">ENG</div>
+          <div class="meera-select-language-list-item" id="select-language-ar">عربي</div>
+        </div>
+      </div>
+
+
+      <div class="meera-login-content">
+        <form id="loginForm" method="POST" action="/auth/local?req=xujtmcajdhne5ih5w3axmeful" class="form-email">
+          <div class="meera-form-row login-email-input">
+            
+            <label for="email" id="label-email" class="input-label">Email Address</label>
+            <input tabindex="1" required id="login" name="login" type="text" class="meera-form-input meera-email-input"
+              placeholder="Enter email address"  autofocus  />
+            
+            <div class="meera-common-warning meera-email-warning">
+              <img src="https://c-sso.oia.gov.om/theme/img/meera-icon-warn-41e5e0c4afcfb74b.png" alt="!">
+            </div>
+            <div id="email-format-error" class="meera-common-error  meera-email-error-tip ">
+              Wrong email format
+            </div>
+          </div>
+
+
+          <div class="meera-form-row">
+            <label for="password" id="label-password" class="input-label">Password</label>
+            <input tabindex="2" required id="password" name="password" value=""
+              placeholder="Enter password" type="password" class="meera-form-input meera-password-input" />
+            <div class="meera-common-warning meera-password-warning">
+              <img src="https://c-sso.oia.gov.om/theme/img/meera-icon-warn-41e5e0c4afcfb74b.png" alt="!">
+            </div>
+            <img src="https://c-sso.oia.gov.om/theme/img/eye-off-outline-e6c5d2057b594558.svg" alt="show password"
+              class="meera-login-password-visible">
+            <div class="meera-common-error meera-password-error-tip"></div>
+          </div>
+
+
+          
+
+          
+          <div class="meera-links-row">
+            <div class="meera-remember-me">
+              
+            </div>
+            <div class="meera-forgot-password">
+              <a href="/forgot-password?req=xujtmcajdhne5ih5w3axmeful" id="label-forget">Forgot Password?</a>
+            </div>
+          </div>
+          
+
+
+          
+
+          <button tabindex="4" id="submit-login" type="submit" class="meera-common-btn meera-continue">Login</button>
+        </form>
+
+        
+
+        
+        <div class="meera-have-member-container" id="no-account-container">
+          <p class="meera-have-member" id="no-account">
+            Don't have an account?
+          </p>
+          <a class="meera-common-link" href="/signup?req=xujtmcajdhne5ih5w3axmeful" id="signup-btn">Signup</a>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<div class="login-tips-dialog-container">
+  <h3 class="login-tips-dialog-title">Tips</h3>
+  <p class="login-tips-dialog-text">Your password has been used for a long time. Please use the forgot password function
+    to set a new password.</p>
+  <button class="login-tips-dialog-btn">I got it</button>
+</div>
+
+
+
+<script src="https://c-sso.oia.gov.om/theme/js/common-fad948a6b62fa7d8.js"></script>
+<script src="https://c-sso.oia.gov.om/theme/js/areaNum-da15a70d11e9c0d7.js"></script>
+<script src="https://c-sso.oia.gov.om/theme/langs/language-ea860a9a87adb89c.js"></script>
+
+<script>
+  +(function (document) {
+    const errorCode = ''
+    const errorMsg = ''
+    const forgetURL = '\/forgot-password?req=xujtmcajdhne5ih5w3axmeful'
+    const step = ''
+    const mfa = ''
+    const policy = ''
+    const mfaRecipient = ''
+    let loginType = 'email'
+    const container = document.querySelector('.fluxble-common-container')
+    const showMore = document.querySelector('.meera-show-more')
+    const pwdInput = document.querySelector('.meera-password-input')
+    const thirdBtns = document.querySelectorAll('.meera-other-login')
+    const emailInput = document.querySelector('#login')
+    const showPwdBtn = document.querySelector('.meera-login-password-visible')
+    const forgetPwdBtn = document.querySelector('.meera-forgot-password')
+    const pwdErrorIcon = document.querySelector('.meera-password-warning')
+    const allBtnsLen = '0'
+    const showBtnNums = 3
+    const formObj = document.querySelector('.form-email')
+    const loginBtn = document.querySelector('#submit-login')
+    const dialogMask = document.querySelector('.theme-mask')
+    const tipsDialog = document.querySelector('.login-tips-dialog-container')
+    const confirmBtn = document.querySelector('.login-tips-dialog-btn')
+    const numberReg = /^\d{1,}$/i
+    let chosenNum = '968'
+    const emailReg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+    const emailLoginBtn = document.querySelector('#email-login')
+    const mobileLoginBtn = document.querySelector('#mobile-login')
+    const emailInputContainer = document.querySelector('.login-email-input')
+    const mobileInputContainer = document.querySelector('.login-mobile-input')
+    const mobileInput = document.querySelector('.meera-phone-input')
+    const selectArea = document.querySelector('.meera-area-select-body')
+    const selectHead = document.querySelector('.meera-area-select-head')
+    const selectContainer = document.querySelector('.meera-area-select-container')
+    const searchBtn = document.querySelector('#meera-area-search')
+    const emailErrorTip = document.querySelector('.meera-email-error-tip')
+    const emailErrorIcon = document.querySelector('.meera-email-warning')
+    const mobileErrorTip = document.querySelector('.meera-mobile-error-tip')
+    const mobileErrorIcon = document.querySelector('.meera-mobile-warning')
+    const countryCode = document.querySelector('#country-code')
+    const arrow = document.querySelector('.meera-area-arrow')
+    const areaOption = selectArea ? selectArea.getElementsByTagName('li') : []
+    const otpCodeDialog = document.querySelector('.code-dialog-container')
+    const backToLoginIcon = document.querySelector('.code-dialog-back-icon')
+    const inputBtns = document.querySelectorAll('.code-dialog-input')
+    const inputContainer = document.querySelector('.code-dialog-userInput')
+    const wrongCodeInfo = document.querySelector('#login-error')
+    const submitBtn = document.querySelector('.code-dialog-submit-button')
+    const verifyCode = document.querySelector('.verify-code')
+    const resendBtn = document.querySelector('#resend-btn')
+    const resendText = document.querySelector('.code-dialog-send-again-text')
+    const countDown = document.querySelector('.code-dialog-resendable-text')
+    const codeError = document.querySelector('.send-code-error')
+    const hiddenMobile = document.querySelector('.hidden-mobile')
+    const sendMsg = document.querySelector('.code-dialog-text')
+    let timer = null
+    let sendCodeToggle = true
+    let checkCodeToggle = true
+
+
+
+    const outSide = document.querySelector('.meera-panel')
+    const showLanguageBtn = document.getElementById('show-language-list')
+    const languageList = document.getElementById('language-list')
+    const selectEng = document.getElementById('select-language-eng')
+    const selectAr = document.getElementById('select-language-ar')
+    const showLanguage = document.getElementById('selected-language')
+    const labelEmail = document.getElementById('label-email')
+    const inputEmail = document.getElementById('login')
+    const labelPassword = document.getElementById('label-password')
+    const inputPassword = document.getElementById('password')
+    const inputLabelList = document.querySelectorAll('.input-label')
+    const inputList = document.querySelectorAll('.meera-form-input')
+    const labelRememberMe = document.getElementById('label-remember-me')
+    const labelForget = document.getElementById('label-forget')
+    const labelNoAccount = document.getElementById('no-account')
+    const signupBtn = document.getElementById('signup-btn')
+    const noAccountContainer = document.getElementById('no-account-container')
+    const labelOthers = document.querySelectorAll('.label-others')
+    const containerOthers = document.querySelectorAll('.login-with-others')
+    const errorEmailFormat = document.getElementById('email-format-error')
+    const errorLogin = document.getElementById('login-error-backend')
+    const labelImgCap = document.getElementById('imgcapdots')
+
+
+    const isLocal = 'true' === 'true'
+
+    showLanguageBtn.addEventListener('click', (e) => {
+      e.stopPropagation()
+      languageList.style.display = 'block'
+    })
+
+
+    const setLanguage = (language) => {
+      showLanguage.innerText = language === langsMap.English ? 'ENG' : 'عربي'
+      labelPassword.innerText = langs[language]['password']
+      inputPassword.setAttribute('placeholder', langs[language]['enter_password'])
+      loginBtn.innerText = langs[language]['login']
+      labelOthers.forEach(item => item.innerText = langs[language]['or_continue_with'])
+      errorEmailFormat.innerText = langs[language]['error_email_format']
+      labelRememberMe && (labelRememberMe.innerText = langs[language]['remember_me'])
+      labelForget && (labelForget.innerText = langs[language]['forgot_password'])
+      labelNoAccount && (labelNoAccount.innerText = langs[language]['don’t_have_an_account'])
+      signupBtn && (signupBtn.innerText = langs[language]['signup'])
+      labelImgCap && (labelImgCap.setAttribute('placeholder', langs[language]['img_cap_placeholder']))
+
+      if (isLocal) {
+        labelEmail.innerText = langs[language]['email_address']
+        inputEmail.setAttribute('placeholder', langs[language]['enter_email_address'])
+      } else {
+        labelEmail.innerText = langs[language]['username']
+        inputEmail.setAttribute('placeholder', langs[language]['enter_username'])
+      }
+
+      if (errorCode == 'invalid_input') {
+        errorLogin.innerText = langs[language]['invalid_username']
+      } else {
+        errorLogin && (errorLogin.innerText = langs[language][errorCode] || errorMsg ) 
+      }
+
+      if (language === langsMap.Arabic) {
+        noAccountContainer && (noAccountContainer.style.flexDirection = 'row-reverse')
+        inputLabelList.forEach(item => item.style.textAlign = 'end')
+        inputList.forEach(item => item.style.direction = 'rtl')
+        containerOthers.forEach(item => item.style.flexDirection = 'row-reverse')
+        errorEmailFormat.style.textAlign = 'end'
+        showPwdBtn.style.right = ''
+        showPwdBtn.style.left = '15px'
+      } else {
+        noAccountContainer && (noAccountContainer.style.flexDirection = 'row')
+        inputLabelList.forEach(item => item.style.textAlign = 'start')
+        inputList.forEach(item => item.style.direction = '')
+        containerOthers.forEach(item => item.style.flexDirection = 'row')
+        errorEmailFormat.style.textAlign = 'start'
+        showPwdBtn.style.left = ''
+        showPwdBtn.style.right = '15px'
+      }
+    }
+
+    setLanguage(selectedLanguage)
+
+    container.addEventListener('click', () => {
+      languageList.style.display = 'none'
+    })
+
+
+    container.addEventListener('click', () => {
+      languageList.style.display = 'none'
+    })
+
+    selectEng.addEventListener('click', () => {
+      setLanguage(langsMap.English)
+      document.cookie = keyOfLanguage + '=' + langsMap.English + '; path=/;'
+    })
+
+    selectAr.addEventListener('click', () => {
+      setLanguage(langsMap.Arabic)
+      document.cookie = keyOfLanguage + '=' + langsMap.Arabic + '; path=/;'
+    })
+
+
+    emailCheck(emailInput, emailReg, emailErrorTip, emailErrorIcon)
+    loginBtn.addEventListener('click', function () {
+      emailInput.value = emailInput.value.trim()
+      formObj.submit()
+    })
+
+    confirmBtn.addEventListener('click', function () {
+      if (loginType === 'mobile') {
+        localStorage.setItem('defaultVal', chosenNum + ' ' + mobileInput.value);
+      } else {
+        localStorage.setItem('defaultVal', emailInput.value);
+      }
+      if (forgetURL) {
+        window.location.href = forgetURL
+      }
+    })
+
+    if (forgetPwdBtn) {
+      forgetPwdBtn.addEventListener('click', function () {
+        if (loginType === 'mobile') {
+          localStorage.setItem('defaultVal', chosenNum + ' ' + mobileInput.value);
+        } else {
+          localStorage.setItem('defaultVal', emailInput.value);
+        }
+      })
+    }
+
+    (function () {
+      
+      const activedInfo = document.querySelector('.meera-verify-succeed')
+      const urlParams = new URLSearchParams(window.location.search)
+      if (urlParams.has('actived')) {
+        
+        let timerNum = -34;
+        const moveDownTimer = setInterval(function () {
+          if (timerNum < 0) {
+            timerNum++;
+            activedInfo.style.top = timerNum + 'px';
+          } else {
+            clearInterval(moveDownTimer);
+          }
+        }, 10);
+        setTimeout(function () {
+          const moveUpTimer = setInterval(function () {
+            if (timerNum > -34) {
+              timerNum--;
+              activedInfo.style.top = timerNum + 'px';
+            } else {
+              clearInterval(moveUpTimer);
+            }
+          }, 10);
+        }, 3500)
+      }
+    })()
+
+    window['captcha-image'].addEventListener('click', async function () {
+      const res = await (await fetch(`/captcha/image?req="xujtmcajdhne5ih5w3axmeful"`)).json()
+      window['captcha-imgcapkey'].value = res.data.key
+      window['captcha-image'].src = 'data:image/png;base64,' + res.data.b64
+    }, false)
+  })(document)
+</script>
+
+
+    <div class="theme-copyright">Copyright © 2024 Oman Investment Authority. All Rights Reserved</div>
+  </body>
+</html>
+
